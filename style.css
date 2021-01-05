@@ -1,5 +1,6 @@
 :root {
-	--black1: #222222;
+	--black0: #0f0f0f;
+	--black1: #161616;
 	--white1: #DDDDDD;
 	
 	--linkGreen: #198c08;
@@ -7,6 +8,7 @@
 }
 
 body {
+	margin: 0;
 	font-family: Hack;
 	color: var(--white1);
 	background-color: var(--black1);
@@ -16,10 +18,12 @@ body {
 	LINKS
 **/
 a:link {
-	color: var(--green1)
+	color: var(--linkGreen);
+	text-decoration: none;
 }
 a:visited {
 	color: var(--linkGreen2);
+	text-decoration: none;
 }
 a:hover, a:active {
 	color: var(--white1);
@@ -31,7 +35,25 @@ a:hover, a:active {
 	align-items: center;
 }
 
+.header {
+	display: flex;
+	height: 60px;
+	background-color: var(--black0);
+}
+.headerItm {
+	align-self: center;
+	padding: 7px;
+}
+
 #welcome {
-	width: 55vw;
+	width: 60vw;
 	text-align: center;
+}
+#name {
+	margin-block: 0;
+	font-weight: normal;
+	font-size: 4em;
+}
+#quickAbout {
+	font-size: 1.3em;
 }
