@@ -9,7 +9,7 @@
 
 body {
 	margin: 0;
-	font-family: Hack;
+	font-family: hack;
 	color: var(--white1);
 	background-color: var(--black1);
 }
