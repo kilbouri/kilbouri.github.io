@@ -1,0 +1,76 @@
+/** Source Code Pro font import **/
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+:root {
+	--black0: #0f0f0f;
+	--black1: #161616;
+	--white1: #DDDDDD;
+	
+	--linkGreen: #198c08;
+	--linkGreen2: #105905;
+}
+
+body {
+	margin: 0;
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 200;
+	color: var(--white1);
+	background-color: var(--black1);
+}
+
+/**
+	LINKS
+**/
+a:link {
+	color: var(--linkGreen);
+	font-weight: 500;
+	text-decoration: none;
+}
+a:visited {
+	color: var(--linkGreen2);
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: var(--white1);
+}
+
+.centered-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav {
+	position: fixed;
+	display: flex;
+	height: 5rem;
+	width: 100%;
+	background-color: var(--black0);
+}
+.navItem {
+	float: left;
+	align-self: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 1.35rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: 100;
+}
+h1 {
+	font-size: 5rem;
+}
+
+#welcome {
+	width: 750px;
+	max-width: 100%;
+	text-align: center;
+}
+#quickAbout {
+	font-size: 1.25rem;
+}
+#scrollFiller {
+	overflow-wrap: anywhere;
+}
