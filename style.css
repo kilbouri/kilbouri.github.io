@@ -1,0 +1,37 @@
+:root {
+	--black1: #222222;
+	--white1: #DDDDDD;
+	
+	--linkGreen: #198c08;
+	--linkGreen2: #105905;
+}
+
+body {
+	font-family: Hack;
+	color: var(--white1);
+	background-color: var(--black1);
+}
+
+/**
+	LINKS
+**/
+a:link {
+	color: var(--green1)
+}
+a:visited {
+	color: var(--linkGreen2);
+}
+a:hover, a:active {
+	color: var(--white1);
+}
+
+.centered-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#welcome {
+	width: 55vw;
+	text-align: center;
+}
