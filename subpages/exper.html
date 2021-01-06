@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Isaac Kilbourne</title>
+		<link rel='icon' type='image/svg+xml' href='../assets/Logo.svg'>
+		
+		<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+		<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' rel='stylesheet'/>
+		<link href='../assets/style.css' rel='stylesheet'>
+	</head>
+	<body>
+		<!-- Navigation Bar -->
+		<div class='navbar navbar-dark fixed-top navbar-expand-md bg-darker'>
+			<div class='container-fluid'>
+				<!-- Brand -->
+				<a class='navbar-brand no-pad' href='#'>
+					<svg height=3rem viewBox='0 0 4096 4096' style='fill: var(--ik-foreground)'>
+						<path d='M636.68,476.324L632.911,3619.68C240.696,3206.08 0,2681.06 0,2066.75C0,1450.39 242.294,890.182 636.68,476.324ZM1677.03,3619.68L1677.03,476.324L1307.28,476.324L1307.28,3619.68L1677.03,3619.68ZM2340.18,2113.32L2340.18,3619.68L3489.33,3619.68L2340.18,2113.32ZM3809.87,953.909C3992.21,1284.01 4096,1663.35 4096,2066.75C4096,2424.57 4014.34,2763.47 3868.61,3065.9L2988.42,1945.67L3809.87,953.909ZM3458.51,476.324L2340.18,476.324L2340.18,1893.51L3458.51,476.324Z'/>
+					</svg>
+				</a>
+				
+				<!-- Toggle Button -->
+				<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav'>
+					<span class='navbar-toggler-icon'></span>
+				</button>
+				
+				<!-- Content -->
+				<div class='collapse navbar-collapse' id='navbarNav'>
+					<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+						<li class='nav-item'>
+							<a class='nav-link' title='Go home!' href='../index.html'>Home</a>
+						</li>
+						<li class='navitem'>
+							<a class='nav-link' title='See and run some small experiments I&#39;ve written!' href='#'>Experiments</a>
+						</li>
+						<li class='nav-item'>
+							<a class='nav-link' title='Get to know me at a glance!' href='#'>Resume</a>
+						</li>
+						<li class='nav-item'>
+							<a class='nav-link' title='Let&#39;s talk!' href='#'>Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Main content -->
+		<div class='splash mx-auto text-center' style='margin-bottom: 5vh'>
+			<h1 class='section-header'>Experiments</h1>
+			<hr class='section-rule mx-auto'>
+			<p class='section-content'>Sometimes I learn things that seem too good to be true. Then I code them and have my mind blown!</p>
+		</div>
+		
+		<!-- Experiments Sidenavigation -->
+		<div id='experiments-sidenav'>
+			<div class="d-flex align-items-start">
+				<!-- Side buttons -->
+				<div class="nav flex-column nav-pills ms-3 me-3">
+					<p class='section-content' style='margin: 0;'>C Experiments</p>
+					<hr class='section-rule mt-1' style='width: 100%'>
+					<a class="experiment-pill nav-link active" data-bs-toggle="pill" href="#c-ggwp">Guessing Game Win Probability</a>
+
+					<p class='section-content pt-3' style='margin: 0;'>Python Experiments</p>
+					<hr class='section-rule mt-1' style='width: 100%'>
+					<a class="experiment-pill nav-link" data-bs-toggle="pill" href="#py-abnums">Autobiographical Numbers</a>
+					<a class="experiment-pill nav-link" data-bs-toggle="pill" href="#py-ncfib">Near-Constant Fibonacci</a>
+				</div>
+			
+				<!-- Experiments Content -->
+				<div class="tab-content flex-fill" id="experiments-contents">
+					<!-- C Experiments -->
+					<div class="tab-pane fade show active" role="tabpanel" id="c-ggwp">
+						<embed async class='repl-embed pe-3' src="https://repl.it/@voidvenom/5050-Guessing-Strategy-Guess-Game?lite=true"/>
+					</div>
+					
+					<!-- Python Experiments -->
+					<div class="tab-pane fade" role="tabpanel" id="py-abnums">
+						<embed async class='repl-embed pe-3' src="https://repl.it/@voidvenom/Autobiographical-Numbers?lite=true"/>
+					</div>
+					<div class="tab-pane fade" role="tabpanel" id="py-ncfib">
+						<embed async class='repl-embed pe-3' src="https://repl.it/@voidvenom/Almost-Constant-Fib?lite=true&theme=dark"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
