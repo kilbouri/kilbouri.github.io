@@ -2,75 +2,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
 
 :root {
-	--black0: #0f0f0f;
-	--black1: #161616;
-	--white1: #DDDDDD;
+	--ik-foreground: #ffffff;
 	
-	--linkGreen: #198c08;
-	--linkGreen2: #105905;
+	--ik-background1: #141414;
+	--ik-background2: #0f0f0f;
+	
+	--ik-highlight: rgba(53, 163, 34, .35);
+	
+	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
 }
-
 body {
-	margin: 0;
-	font-family: 'Source Code Pro', monospace;
-	font-weight: 200;
-	color: var(--white1);
-	background-color: var(--black1);
+	font-family: var(--ik-monospace-font);
+	background-color: var(--ik-background1);
+	
+	color: var(--ik-foreground);
 }
-
-/**
-	LINKS
-**/
-a:link {
-	color: var(--linkGreen);
-	font-weight: 500;
-	text-decoration: none;
+::selection {
+  background: var(--ik-highlight);
 }
-a:visited {
-	color: var(--linkGreen2);
-	text-decoration: none;
+::-moz-selection {
+  background: var(--ik-highlight);
 }
-a:hover, a:active {
-	color: var(--white1);
+.open-logo {
+	height: 25vh;
+	width: 25vw;
+	margin-left: 37.5vw;
+	margin-right: 37.5vw;
+	margin-top: 37.5vh;
+	margin-bottom: 37.5vh;
 }
-
-.centered-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.delay-half-s {
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
 }
-
-nav {
-	position: fixed;
-	display: flex;
-	height: 5rem;
-	width: 100%;
-	background-color: var(--black0);
+.delay1s {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
 }
-.navItem {
-	float: left;
-	align-self: center;
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size: 1.35rem;
+.fg-button {
+	background-color: transparent;
+	border: 2px solid var(--ik-foreground);
+	color: var(--ik-foreground);
 }
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
+.bg-darker {
+	background-color: var(--ik-background2) !important;
+}
+.home-splash {
+	margin-top: 30vh;
+	width:1000px;
+	max-width: 90%;
+	display: block;
+}
+.section-rule {
+	border: 1px solid var(--ik-foreground);
+	width: 65%;
+	opacity: .25;
+}
+.section-header {
+	font-size: 4rem;
 	font-weight: 100;
 }
-h1 {
-	font-size: 5rem;
-}
-
-#welcome {
-	width: 750px;
-	max-width: 100%;
-	text-align: center;
-}
-#quickAbout {
-	font-size: 1.25rem;
-}
-#scrollFiller {
-	overflow-wrap: anywhere;
+.section-content {
+	font-size: 1.5rem;
+	font-weight: 100;
 }
