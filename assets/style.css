@@ -45,22 +45,6 @@ a:visited, a:active {
 	margin-top: var(--ik-vertical-center);
 	margin-bottom: var(--ik-vertical-center);
 }
-.delay-half-s {
-	-webkit-animation-delay: .5s;
-	animation-delay: .5s;
-}
-.delay1s {
-	-webkit-animation-delay: 1s;
-	animation-delay: 1s;
-}
-.delay1-half-s {
-	-webkit-animation-delay: 1.5s;
-	animation-delay: 1.5s;
-}
-.delay2s {
-	-webkit-animation-delay: 2s;
-	animation-delay: 2s;
-}
 .fg-button {
 	background-color: transparent;
 	border: 2px solid var(--ik-foreground);
@@ -101,4 +85,6 @@ a:visited, a:active {
 	
 	max-height: 85vh;
 	min-height: 60vh;
+	
+	border-radius: .25rem;
 }
