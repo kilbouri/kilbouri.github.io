@@ -1,0 +1,18 @@
+/**
+ * This stylesheet provides theming variables to the main style sheet
+ */
+:root {
+	--ik-foreground1: #000000;
+	--ik-foreground2: #a0a0a0;
+	
+	--ik-background1: #f4f4f4;
+	--ik-background2: #ffffff;
+	
+	--ik-nav-button-border: rgba(0, 0, 0, .2);
+	--ik-nav-button-center: rgba(0, 0, 0, .55);
+	
+	--ik-highlight: rgba(53, 163, 34, 1);
+	--ik-highlight-translucent: rgba(53, 163, 34, .35);
+
+	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
+}
