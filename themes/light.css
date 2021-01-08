@@ -3,7 +3,7 @@
  */
 :root {
 	--ik-foreground1: #000000;
-	--ik-foreground2: #a0a0a0;
+	--ik-foreground2: #8d8d8d;
 	
 	--ik-background1: #f4f4f4;
 	--ik-background2: #ffffff;
@@ -11,7 +11,7 @@
 	--ik-nav-button-border: rgba(0, 0, 0, .2);
 	--ik-nav-button-center: rgba(0, 0, 0, .55);
 	
-	--ik-highlight: rgba(53, 163, 34, 1);
+	--ik-highlight: rgb(51, 197, 25);
 	--ik-highlight-translucent: rgba(53, 163, 34, .35);
 
 	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
