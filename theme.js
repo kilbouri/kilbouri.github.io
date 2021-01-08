@@ -19,7 +19,7 @@ function setTheme(theme) {
 	lightsheet.disabled = theme;
 	darksheet.disabled = !theme;
 
-	// replace label on botton
+	// replace label on button
 	document.getElementById('swap-theme-link').innerHTML = (theme ? 'Light' : 'Dark') + ' Mode';
 
 	// update local storage to reflect new theme
