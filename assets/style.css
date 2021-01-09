@@ -1,79 +1,66 @@
 /** Source Code Pro font import **/
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
 
-:root {
-	--ik-vertical-center: 37.5vh;
-	--ik-horizonal-center: 37.5vw;
+/**
+ * UNIVERSAL STYLE
+ */
+* {
+	font-family: "Source Code Pro", "Courier New", monospace;
+	font-weight: 100;
 }
-body {
-	font-family: var(--ik-monospace-font);
+::selection, ::-moz-selection {
+	color: var(--ik-highlight-translucent);
+}
+
+/**
+ * THEME-MACHINE STYLES
+ */
+.bg {
 	background-color: var(--ik-background1);
-	
-	color: var(--ik-foreground1);
-}
-
-.nav-link:link, .nav-link:visited {
-	color: var(--ik-foreground2) !important;
-}
-.nav-link:hover, .nav-link:active{
-	color: var(--ik-foreground1) !important;
-}
-
-::selection {
-  background: var(--ik-highlight-translucent);
-}
-::-moz-selection {
-  background: var(--ik-highlight-translucent);
-}
-.open-logo {
-	height: 25vh;
-	width: 25vw;
-	margin-left: var(--ik-horizonal-center);
-	margin-right: var(--ik-horizonal-center);
-	margin-top: var(--ik-vertical-center);
-	margin-bottom: var(--ik-vertical-center);
-}
-.fg-button {
-	background-color: transparent;
-	border: 2px solid var(--ik-foreground1);
-	color: var(--ik-foreground1);
 }
 .bg-alternate {
 	background-color: var(--ik-background2);
 }
-.splash {
-	margin-top: 15vh;
-	width:1000px;
-	max-width: 90%;
-	display: block;
+.fg {
+	color: var(--ik-foreground1);
+	fill: var(--ik-foreground1);
+}
+.fg-alternate {
+	color: var(--ik-foreground2);
+	fill: var(--ik-foreground2);
+}
+
+/**
+ * GENERAL STYLE
+ */
+.jumbotron {
+	width: 767px;
+	max-width: 100%;
+}
+#page-content {
+	margin-top: 25vh;
+}
+.page-label {
+	font-weight: 300;
+	font-size: xxx-large;
+}
+.page-blurb {
+	font-size: larger;
 }
 .section-rule {
-	border: 1px solid var(--ik-nav-button-border);
-	width: 65%;
-	opacity: 0.3;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	border: none;
+	border-top: 2px solid var(--ik-foreground2);
 }
-.section-header {
-	font-size: 4rem;
-	font-weight: 100;
+.nav-link {
+	color: var(--ik-foreground2) !important;
+	font-weight: 300;
 }
-.section-subheader {
-	font-size: 2rem;
-	font-weight: 100;
-}
-.section-content {
-	font-size: 1.25rem;
-	font-weight: 100;
-}
-.experiment-pill.active {
-	background-color: var(--ik-highlight) !important;
+.nav-link:hover {
 	color: var(--ik-foreground1) !important;
-}
-.repl-embed {
-	width: 100%;
-	height: 100%;
-	
-	max-height: 100vh;
-	min-height: 60vh;
-	
-	border-radius: .25rem;
+	font-weight: 400;
 }
