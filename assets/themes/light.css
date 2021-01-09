@@ -1,9 +1,9 @@
 /**
  * This stylesheet provides theming variables to the main style sheet
  */
-:root {
+ :root {
 	--ik-foreground1: #000000;
-	--ik-foreground2: #8d8d8d;
+	--ik-foreground2: #454545;
 	
 	--ik-background1: #f4f4f4;
 	--ik-background2: #ffffff;
@@ -15,4 +15,8 @@
 	--ik-highlight-translucent: rgba(53, 163, 34, .35);
 
 	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
+}
+
+.navbar-toggler {
+	filter: invert(100%);
 }

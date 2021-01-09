@@ -1,9 +1,9 @@
 /**
  * This stylesheet provides theming variables to the main style sheet
  */
-:root {
+ :root {
 	--ik-foreground1: #ffffff;
-	--ik-foreground2: #8d8d8d;
+	--ik-foreground2: #cbcbcb;
 	
 	--ik-background1: #141414;
 	--ik-background2: #0f0f0f;
@@ -12,7 +12,7 @@
 	--ik-nav-button-center: rgba(255, 255, 255, .55);
 
 	--ik-highlight: rgb(51, 197, 25);
-	--ik-highlight-translucent: rgba(53, 163, 34, .35);
+	--ik-highlight-translucent: rgba(62, 228, 33, 0.35);
 
 	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
 }
