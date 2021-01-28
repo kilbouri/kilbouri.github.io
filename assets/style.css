@@ -40,12 +40,9 @@
 #page-content {
 	margin-top: 25vh;
 }
-.page-label {
+.section-label {
 	font-weight: 300;
 	font-size: xxx-large;
-}
-.page-blurb {
-	font-size: larger;
 }
 .section-rule {
 	margin-left: 10%;
@@ -64,3 +61,4 @@
 	color: var(--ik-foreground1) !important;
 	font-weight: 400;
 }
+

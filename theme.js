@@ -34,7 +34,7 @@ function setTheme(theme) {
 	// enable/disable appropriately
 	lightsheet.disabled = theme;
 	darksheet.disabled = !theme;
-	
+
 	// replace label on button
 	document.getElementById('swap-theme-link').innerHTML = (theme ? 'Light' : 'Dark') + ' Mode';
 	
