@@ -7,7 +7,7 @@
 	
 	--ik-background1: #f4f4f4;
 	--ik-background2: #ffffff;
-	
+
 	--ik-nav-button-border: rgba(0, 0, 0, .2);
 	--ik-nav-button-center: rgba(0, 0, 0, .55);
 	
@@ -17,6 +17,6 @@
 	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
 }
 
-.navbar-toggler {
+.navbar-toggler, .github-logo {
 	filter: invert(100%);
 }

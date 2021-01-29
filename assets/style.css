@@ -4,7 +4,7 @@
 /**
  * UNIVERSAL STYLE
  */
-* {
+body {
 	font-family: "Source Code Pro", "Courier New", monospace;
 	font-weight: 100;
 }
@@ -29,7 +29,9 @@
 	color: var(--ik-foreground2);
 	fill: var(--ik-foreground2);
 }
-
+.card {
+	background-color: var(--ik-background2);
+}
 /**
  * GENERAL STYLE
  */
@@ -37,8 +39,11 @@
 	width: 767px;
 	max-width: 100%;
 }
-#page-content {
-	margin-top: 25vh;
+.section {
+	padding-top: 8vh;
+	min-height: 100vh;
+	/* Prevents adjacent sections from being revealed by WOW.js too early */
+	margin-bottom: 5px; 
 }
 .section-label {
 	font-weight: 300;
@@ -53,12 +58,22 @@
 	border: none;
 	border-top: 2px solid var(--ik-foreground2);
 }
-.nav-link {
+a, .nav-link {
 	color: var(--ik-foreground2) !important;
 	font-weight: 300;
+	text-decoration: none;
 }
-.nav-link:hover {
+a:hover, .nav-link:hover {
 	color: var(--ik-foreground1) !important;
 	font-weight: 400;
+	text-decoration: none;	
 }
 
+.delayed-250 {
+	-webkit-animation-delay: 250ms;
+	animation-delay: 250ms;
+}
+.delayed-500 {
+	-webkit-animation-delay: 500ms;
+	animation-delay: 500ms;
+}
