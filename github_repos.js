@@ -21,8 +21,9 @@ function add_repo(repo_json) {
 	let last_push = new Date(repo_json.pushed_at);
 	let time = last_push.getHours() % 12 + ":" + String(last_push.getMinutes()).padEnd(2, "0") + ((last_push.getHours() > 12) ? "pm" : "am");
 	let date = months[last_push.getMonth()] + " " + (last_push.getDay() + 1) + ", " + last_push.getFullYear();
-
 	new_clone.querySelector(".repo-push").innerHTML = "Last pushed to at " + time + " on " + date;
+
+	// append the repo to the grid
 	repo_table.appendChild(new_clone);
 }
 

@@ -80,13 +80,17 @@
 		<!-- GitHub Repos List section -->
 		<div id="github" class="fg section wow animate__fadeIn delayed-250">
 			<div class="section-label d-flex justify-content-center align-items-center">
-				<img class="github-logo" src="assets/Logos/Github/gh-light.svg" style="height: 48px;">
+				<img class="github-logo" src="assets/Logos/gh-light.svg" style="height: 48px;">
 				<p class=" align-self-center mb-0 ps-4">GitHub Projects</p>
 			</div>
 			<div class="container p-4">
 				<div id="repo_table" class="row g-2 row-cols-1 row-cols-md-3">
 				</div>
 			</div>
+		</div>
+
+		<!-- Repl.It Project Showcase -->
+		<div id="replit" class="fg section wow animate__fadeIn delayed-250">
 		</div>
 
 		<!-- Repository Template -->
@@ -104,16 +108,16 @@
 
 		<!-- Additional functionality -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-		<script>
-			new WOW({ animateClass: 'animate__animated' }).init();  
-		</script>
 		<script src="theme.js" type="text/javascript"></script>
+		<script src="github_repos.js" type="text/javascript"></script>
+		<script src="repls.js" type="text/javascript"></script>
 		<script type="text/javascript">
+			new WOW({ animateClass: 'animate__animated' }).init();  
+			
 			// removes the animated splash to prevent broken highlighting behaviour
 			document.getElementById('splash-logo').addEventListener('animationend', function () {
 				this.remove();
 			});
 		</script>
-		<script src="github_repos.js" type="text/javascript"></script>
 	</body>
 </html>
