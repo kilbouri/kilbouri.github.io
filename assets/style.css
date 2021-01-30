@@ -6,7 +6,7 @@
  */
 body {
 	font-family: "Source Code Pro", "Courier New", monospace;
-	font-weight: 100;
+	font-weight: 300;
 }
 ::selection, ::-moz-selection {
 	color: var(--ik-highlight-translucent);

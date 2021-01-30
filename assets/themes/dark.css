@@ -3,7 +3,7 @@
  */
  :root {
 	--ik-foreground1: #ffffff;
-	--ik-foreground2: #cbcbcb;
+	--ik-foreground2: #e2e2e2;
 	
 	--ik-background1: #141414;
 	--ik-background2: #0f0f0f;
@@ -15,4 +15,9 @@
 	--ik-highlight-translucent: rgba(62, 228, 33, 0.35);
 
 	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
+}
+
+.navbar-toggler, .logo {
+	filter: saturate(0%);
+	filter: brightness(200%);
 }
