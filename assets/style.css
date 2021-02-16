@@ -7,6 +7,9 @@
 body {
 	font-family: "Source Code Pro", "Courier New", monospace;
 	font-weight: 300;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 ::selection, ::-moz-selection {
 	color: var(--ik-highlight-translucent);
@@ -48,6 +51,7 @@ body {
 .section-label {
 	font-weight: 300;
 	font-size: xxx-large;
+	max-width: -webkit-fill-available;
 }
 .section-rule {
 	margin-left: 10%;
