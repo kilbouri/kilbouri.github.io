@@ -51,6 +51,7 @@ body {
 .section-label {
 	font-weight: 300;
 	font-size: xxx-large;
+	max-width: -webkit-fill-available;
 }
 .section-rule {
 	margin-left: 10%;
