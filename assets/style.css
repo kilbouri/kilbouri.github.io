@@ -48,6 +48,7 @@ body {
 .section-label {
 	font-weight: 300;
 	font-size: xxx-large;
+	-webkit-text-size-adjust: 100%;
 }
 .section-rule {
 	margin-left: 10%;
