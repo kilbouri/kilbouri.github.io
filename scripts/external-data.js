@@ -61,10 +61,7 @@ get_request_json('https://api.github.com/users/kilbouri/repos')
   .then((json) => {
     remove_github_spinner();
     let repo_table = document.getElementById('repo_table');
-    json.forEach((element) => {
-      console.log(element);
-      add_repo(repo_table, element);
-    });
+    json.forEach((element) => add_repo(repo_table, element));
   })
   .catch((error) => {
     remove_github_spinner();
