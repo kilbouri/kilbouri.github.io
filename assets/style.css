@@ -5,82 +5,85 @@
  * UNIVERSAL STYLE
  */
 body {
-	font-family: "Source Code Pro", "Courier New", monospace;
-	font-weight: 300;
-	-webkit-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+  font-family: 'Source Code Pro', 'Courier New', monospace;
+  font-weight: 300;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
 }
-::selection, ::-moz-selection {
-	color: var(--ik-highlight-translucent);
+::selection,
+::-moz-selection {
+  color: var(--ik-highlight-translucent);
 }
 
 /**
  * THEME-MACHINE STYLES
  */
 .bg {
-	background-color: var(--ik-background1);
+  background-color: var(--ik-background1);
 }
 .bg-alternate {
-	background-color: var(--ik-background2);
+  background-color: var(--ik-background2);
 }
 .fg {
-	color: var(--ik-foreground1);
-	fill: var(--ik-foreground1);
+  color: var(--ik-foreground1);
+  fill: var(--ik-foreground1);
 }
 .fg-alternate {
-	color: var(--ik-foreground2);
-	fill: var(--ik-foreground2);
+  color: var(--ik-foreground2);
+  fill: var(--ik-foreground2);
 }
 .card {
-	background-color: var(--ik-background2);
+  background-color: var(--ik-background2);
 }
 /**
  * GENERAL STYLE
  */
 .jumbotron {
-	width: 767px;
-	max-width: 100%;
+  width: 767px;
+  max-width: 100%;
 }
 .section {
-	padding-top: 8vh;
-	min-height: 100vh;
-	/* Prevents adjacent sections from being revealed by WOW.js too early */
-	margin-bottom: 5px; 
+  padding-top: 8vh;
+  min-height: 100vh;
+  /* Prevents adjacent sections from being revealed by WOW.js too early */
+  margin-bottom: 5px;
 }
 .section-label {
-	font-weight: 300;
-	font-size: xxx-large;
-	max-width: -webkit-fill-available;
+  font-weight: 300;
+  font-size: 3rem;
+  max-width: -webkit-fill-available;
 }
 .section-rule {
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 5px;
-	margin-bottom: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
-	border: none;
-	border-top: 2px solid var(--ik-foreground2);
+  border: none;
+  border-top: 2px solid var(--ik-foreground2);
 }
-a, .nav-link {
-	color: var(--ik-foreground2) !important;
-	font-weight: 300;
-	text-decoration: none;
+a,
+.nav-link {
+  color: var(--ik-foreground2) !important;
+  font-weight: 300;
+  text-decoration: none;
 }
-a:hover, .nav-link:hover {
-	color: var(--ik-foreground1) !important;
-	font-weight: 400;
-	text-decoration: none;	
+a:hover,
+.nav-link:hover {
+  color: var(--ik-foreground1) !important;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .delayed-250 {
-	-webkit-animation-delay: 250ms;
-	animation-delay: 250ms;
+  -webkit-animation-delay: 250ms;
+  animation-delay: 250ms;
 }
 .delayed-500 {
-	-webkit-animation-delay: 500ms;
-	animation-delay: 500ms;
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
 }
 .animate__animated.slow_af {
-	--animate-duration: 10s;
+  --animate-duration: 10s;
 }

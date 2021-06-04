@@ -100,10 +100,16 @@
     <!-- GitHub Repos List section -->
     <div id="projects" class="fg section wow animate__fadeIn delayed-250">
       <div id="github-projects">
-        <div class="section-label d-flex justify-content-center align-items-center">
+        <div class="section-label .mx-5 d-flex justify-content-center align-items-center">
           <img class="logo" src="assets/Logos/github.svg" style="height: 48px" />
           <p class="align-self-center mb-0 ps-4">GitHub Projects</p>
         </div>
+
+        <!-- Loading spinner for slow connections (removed when github promise is fullfilled)-->
+        <div id="github-loading-spinner" class="d-flex justify-content-center">
+          <div class="spinner-border"></div>
+        </div>
+
         <div class="container p-4">
           <div id="repo_table" class="row g-2 row-cols-1 row-cols-lg-3"></div>
         </div>
@@ -113,6 +119,12 @@
           <img class="logo" src="assets/Logos/replit.svg" style="height: 48px" />
           <p class="align-self-center mb-0 ps-4">repl.it Projects</p>
         </div>
+
+        <!-- Loading spinner for slow connections (removed when repl promise is fullfilled)-->
+        <div id="repl-loading-spinner" class="d-flex justify-content-center">
+          <div class="spinner-border"></div>
+        </div>
+
         <div class="container p-4">
           <div id="repl_table" class="row g-2 row-cols-1 row-cols-lg-3"></div>
         </div>
@@ -124,10 +136,17 @@
       <div class="wow animate__fadeIn col delayed-250">
         <div class="card h-100 shadow-sm p-3">
           <div class="card-body p-0" style="max-width: 690px">
-            <a class="repo-link" href="#githb" target="blank"><h5 class="repo-name fg">Repo Name</h5></a>
-            <p class="repo-desc fg-alternate">This is the description of this fantastic repo that I really want you to click on!</p>
+            <a id="repo-link" href="" target="blank">
+              <h5 id="repo-name" class="fg">{{REPO NAME}}</h5>
+            </a>
+            <p id="repo-desc" class="fg-alternate">{{REPO DESCRIPTION}}</p>
           </div>
-          <p class="fg-alternate m-0"><small class="repo-push">Last push was on some day</small></p>
+          <div style="display: inline-flex">
+            <p class="fg-alternate m-0" style="display: inline-block; width: calc(100% - 18px)">
+              <small id="repo-push">{{LAST PUSH}}</small>
+            </p>
+            <img id="repo-lang" src="" title="" style="width: 18px; align-self: flex-end" />
+          </div>
         </div>
       </div>
     </template>
