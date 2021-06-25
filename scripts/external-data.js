@@ -70,7 +70,7 @@ get_request_json('https://api.github.com/users/kilbouri/repos')
   });
 
 // fetch my cached repl list from the repl server
-get_request_json('https://replcacheserver.voidvenom.repl.co')
+get_request_json('https://replcacheserver.voidvenom.repl.co/cache')
   .then((json) => {
     remove_repl_spinner();
     json.data.userByUsername.publicRepls.items.forEach((repl) => {
