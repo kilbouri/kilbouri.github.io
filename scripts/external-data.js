@@ -14,11 +14,13 @@ function interpret_date(date) {
   if (date == undefined) return '';
   date = new Date(date);
 
+  console.log(date);
+
   let h = String(date.getHours() % 12);
   let m = String(date.getMinutes()).padEnd(2, '0');
   let x = date.getHours() > 12 ? 'pm' : 'am';
 
-  let D = date.getDay() + 1;
+  let D = date.getDate();
   let M = months[date.getMonth()];
   let Y = date.getFullYear();
 
