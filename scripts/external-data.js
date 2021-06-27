@@ -1,6 +1,10 @@
-let months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-let repo_template = document.getElementById('repo_template');
-let language_overrides = {
+const github_api = 'https://api.github.com/users/kilbouri/repos';
+const repl_api = 'https://replcacheserver.voidvenom.repl.co/cache';
+const icon_source = 'https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons';
+
+const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+const repo_template = document.getElementById('repo_template');
+const language_overrides = {
   python3: 'python',
   python2: 'python',
 };
@@ -13,8 +17,6 @@ function get_name(name, isFork) {
 function interpret_date(date) {
   if (date == undefined) return '';
   date = new Date(date);
-
-  console.log(date);
 
   let h = String(date.getHours() % 12);
   let m = String(date.getMinutes()).padEnd(2, '0');
@@ -29,7 +31,7 @@ function interpret_date(date) {
 
 function get_language_url(lang) {
   let langName = get_language_name(lang);
-  if (langName) return `https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/${langName}.svg`;
+  if (langName) return `${icon_source}/${langName}.svg`;
   else return '';
 }
 
@@ -59,22 +61,22 @@ function add_repo(parent, json) {
 }
 
 // fetch my repo list from the GitHub API
-get_request_json('https://api.github.com/users/kilbouri/repos')
+get_request_json(github_api)
   .then((json) => {
-    remove_github_spinner();
+    remove_element('#github-loading-spinner');
     let repo_table = document.getElementById('repo_table');
     json.forEach((element) => add_repo(repo_table, element));
   })
   .catch((error) => {
-    remove_github_spinner();
+    remove_element('#github-loading-spinner');
     add_repo(document.getElementById('repo_table'), get_error_card('GitHub'));
     console.log(`GitHub Fetch Error -> ${error}`);
   });
 
 // fetch my cached repl list from the repl server
-get_request_json('https://replcacheserver.voidvenom.repl.co/cache')
+get_request_json(repl_api)
   .then((json) => {
-    remove_repl_spinner();
+    remove_element('#repl-loading-spinner');
     json.data.userByUsername.publicRepls.items.forEach((repl) => {
       add_repo(document.getElementById('repl_table'), {
         name: repl.title,
@@ -88,7 +90,7 @@ get_request_json('https://replcacheserver.voidvenom.repl.co/cache')
   })
   .catch((error) => {
     add_repo(document.getElementById('repl_table'), get_error_card('Repl Cache Server'));
-    remove_repl_spinner();
+    remove_element('#repl-loading-spinner');
     console.log(`Repl Fetch Error -> ${error}`);
   });
 
@@ -108,12 +110,7 @@ function get_error_card(source) {
   };
 }
 
-function remove_github_spinner() {
-  let toRemove = document.querySelector('#github-loading-spinner');
-  toRemove.parentNode.removeChild(toRemove);
-}
-
-function remove_repl_spinner() {
-  let toRemove = document.querySelector('#repl-loading-spinner');
+function remove_element(selector) {
+  let toRemove = document.querySelector(selector);
   toRemove.parentNode.removeChild(toRemove);
 }
