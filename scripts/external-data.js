@@ -19,7 +19,7 @@ function interpret_date(date) {
   date = new Date(date);
 
   let h = String(date.getHours() % 12);
-  let m = String(date.getMinutes()).padEnd(2, '0');
+  let m = String(date.getMinutes()).padStart(2, '0');
   let x = date.getHours() > 12 ? 'pm' : 'am';
 
   let D = date.getDate();
