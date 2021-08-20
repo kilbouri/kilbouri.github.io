@@ -8,7 +8,7 @@ function add_language(parent, item) {
 	new_clone.querySelector('#icon').src = get_language_url(item.name);
 	new_clone.querySelector('#progBar').style = `width: ${item.proficiency}%`;
 	new_clone.querySelector('#progBarLanguage').innerHTML = `${item.name}`;
-	new_clone.querySelector('#progBarProficiency').innerHTML = `${item.proficiency}%`;
+	// new_clone.querySelector('#progBarProficiency').innerHTML = `${item.proficiency}%`;
 
 	parent.appendChild(new_clone);
 }

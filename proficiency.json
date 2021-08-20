@@ -2,7 +2,7 @@
     "languages": [
         {
             "name": "C",
-            "proficiency": 90
+            "proficiency": 92
         },
         {
             "name": "C#",
@@ -30,7 +30,7 @@
         },
         {
             "name": "CSS",
-            "proficiency": 81
+            "proficiency": 90
         }
     ]
 }

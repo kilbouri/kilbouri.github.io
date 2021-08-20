@@ -4,6 +4,7 @@
  :root {
 	--ik-foreground1: #000000;
 	--ik-foreground2: #454545;
+	--ik-muted-foreground: #aaaaaa;
 
 	--ik-background1: #f4f4f4;
 	--ik-background2: #ffffff;
