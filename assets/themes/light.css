@@ -4,15 +4,18 @@
  :root {
 	--ik-foreground1: #000000;
 	--ik-foreground2: #454545;
-	
+
 	--ik-background1: #f4f4f4;
 	--ik-background2: #ffffff;
 
-	--ik-nav-button-border: rgba(0, 0, 0, .2);
-	--ik-nav-button-center: rgba(0, 0, 0, .55);
-	
-	--ik-highlight: rgb(51, 197, 25);
-	--ik-highlight-translucent: rgba(53, 163, 34, .35);
+	--ik-nav-button-border: #00000033;
+	--ik-nav-button-center: #0000008c;
+
+	--ik-highlight: #33c519;
+	--ik-highlight-translucent: #35a32259;
+
+	--ik-languageProgressBarFg: #669955;
+	--ik-languageProgressBarBg: var(--ik-background2);
 
 	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
 }

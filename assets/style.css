@@ -36,6 +36,13 @@ body {
 .card {
   background-color: var(--ik-background2);
 }
+
+.progress {
+  background-color: var(--ik-languageProgressBarBg);
+}
+.progress>.progress-bar {
+  background-color: var(--ik-languageProgressBarFg);
+}
 /**
  * GENERAL STYLE
  */

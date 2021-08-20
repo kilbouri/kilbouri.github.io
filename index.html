@@ -74,25 +74,23 @@
     </div>
 
     <!-- Header section -->
-    <div id="header" class="jumbotron text-center mx-auto mb-6 section wow animate__fadeIn delayed-500" style="padding-top: 25vh">
-      <p class="fg-alternate mb-0" style="font-size: large">Hello, my name is...</p>
-      <p class="fg section-label mb-0">Isaac Kilbourne</p>
-      <hr class="section-rule" />
-      <p class="fg-alternate" style="font-size: larger">
-        I am a second year computer science student at the University of Windsor who is passionate about game development, programming, digital arts,
-        and building computers. I love to make cool things that other people also find cool!
-      </p>
-      <!-- Projects Pointer Arrow -->
-      <div class="position-absolute bottom-0 start-50 translate-middle">
-        <div class="animate__animated animate__flash animate__infinite animate__slower">
-          <a href="#projects">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="fg" viewBox="0 0 16 16">
-              <path
-                fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-              />
-            </svg>
-          </a>
+    <div id="header" class="mb-6 section wow animate__fadeIn delayed-500" style="padding-top: 25vh">
+      <div class="jumbotron text-center mx-auto">
+        <p class="fg-alternate mb-0" style="font-size: large">Hello, my name is...</p>
+        <p class="fg section-label mb-0">Isaac Kilbourne</p>
+        <hr class="section-rule" />
+        <p class="fg-alternate" style="font-size: larger">
+          I am a second year computer science student at the University of Windsor who is passionate about programming! I love making things that other people find cool or useful!
+        </p>
+      </div>
+
+      <br/>
+      <br/>
+
+      <!-- Language Proficiency -->
+      <div class="mx-auto">
+        <div id="languages" class="container p-4">
+          <div id="languages_container" class="row g-2 row-cols-1 row-cols-lg-2"></div>
         </div>
       </div>
     </div>
@@ -114,6 +112,7 @@
           <div id="repo_table" class="row g-2 row-cols-1 row-cols-lg-3"></div>
         </div>
       </div>
+
       <div id="repls">
         <div class="section-label d-flex justify-content-center align-items-center">
           <img class="logo" src="assets/Logos/replit.svg" style="height: 48px" />
@@ -155,10 +154,33 @@
       </div>
     </template>
 
-    <!-- Additional functionality -->
+    <!-- Language Proficiency Bar Template -->
+    <template id="language_template">
+      <div class="wow animate__fadeIn col delayed-250">
+        <div class="d-flex my-lg-2" style="align-items: center;">
+          <img id="icon" style="width: 28px; height: 28px">
+              <d class="container d-inline-block">
+                <div class="progress h-100" style="max-height: 18px;">
+                  <div id="progBar" class="progress-bar" role="progressbar">
+                    <!-- labels -->
+                    <div class="container d-flex">
+                        <div id="progBarLanguage"></div>
+                        <div id="progBarProficiency" style="margin-left: auto;"></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </template>
+
+    <!-- Additional functions -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="scripts/theme.js" type="text/javascript"></script>
+    <script src="scripts/icon-helper.js" type="text/javascript"></script>
     <script src="scripts/external-data.js" type="text/javascript"></script>
+    <script src="scripts/projects.js" type="text/javascript"></script>
+    <script src="scripts/language-proficiency.js" type="text/javascript"></script>
     <script type="text/javascript">
       new WOW({ animateClass: 'animate__animated' }).init();
 

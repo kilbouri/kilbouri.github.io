@@ -1,0 +1,36 @@
+{
+    "languages": [
+        {
+            "name": "C",
+            "proficiency": 90
+        },
+        {
+            "name": "C#",
+            "proficiency": 80
+        },
+        {
+            "name": "Java",
+            "proficiency": 75
+        },
+        {
+            "name": "Python",
+            "proficiency": 85
+        },
+        {
+            "name": "Ruby",
+            "proficiency": 25
+        },
+        {
+            "name": "JavaScript",
+            "proficiency": 82
+        },
+        {
+            "name": "HTML",
+            "proficiency": 90
+        },
+        {
+            "name": "CSS",
+            "proficiency": 81
+        }
+    ]
+}
