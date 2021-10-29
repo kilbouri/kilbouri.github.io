@@ -13,7 +13,7 @@ body {
 }
 ::selection,
 ::-moz-selection {
-  color: var(--ik-highlight-translucent);
+  background-color: var(--ik-highlight-translucent);
 }
 
 /**
@@ -45,6 +45,7 @@ body {
 .muted {
   color: var(--ik-muted-foreground);
 }
+
 /**
  * GENERAL STYLE
  */
