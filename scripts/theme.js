@@ -4,13 +4,13 @@
  * storage.
  */
 function readTheme() {
-	const pref = window.localStorage.getItem('theme');
-	if (pref == null) {
-		// First-time setup
-		writeTheme(true)
-		return true;
-	}
-	return pref == 'dark';
+    const pref = window.localStorage.getItem('theme');
+    if (pref == null) {
+        // First-time setup
+        writeTheme(true)
+        return true;
+    }
+    return pref == 'dark';
 }
 /**
  * Writes the currently selected theme into the browser's local
@@ -18,7 +18,7 @@ function readTheme() {
  * @param theme true for dark, false for light
  */
 function writeTheme(theme) {
-	window.localStorage.setItem('theme', theme ? 'dark' : 'light');
+    window.localStorage.setItem('theme', theme ? 'dark' : 'light');
 }
 
 /**
@@ -27,24 +27,24 @@ function writeTheme(theme) {
  * @param theme true for dark, false for light 
  */
 function setTheme(theme) {
-	// get light and dark styles
-	let lightsheet = document.getElementById('light-theme').sheet;
-	let darksheet = document.getElementById('dark-theme').sheet;
-	
-	// enable/disable appropriately
-	lightsheet.disabled = theme;
-	darksheet.disabled = !theme;
+    // get light and dark styles
+    let lightsheet = document.getElementById('light-theme').sheet;
+    let darksheet = document.getElementById('dark-theme').sheet;
 
-	// replace label on button
-	document.getElementById('swap-theme-link').innerHTML = (theme ? 'Light' : 'Dark') + ' Mode';
-	
-	// update local storage to reflect new theme
-	window.localStorage.setItem('theme', theme ? 'dark' : 'light');
+    // enable/disable appropriately
+    lightsheet.disabled = theme;
+    darksheet.disabled = !theme;
+
+    // replace label on button
+    document.getElementById('swap-theme-link').innerHTML = (theme ? 'Light' : 'Dark') + ' Mode';
+
+    // update local storage to reflect new theme
+    window.localStorage.setItem('theme', theme ? 'dark' : 'light');
 }
 
 function swapTheme() {
-	selectedTheme = !selectedTheme;
-	setTheme(selectedTheme);
+    selectedTheme = !selectedTheme;
+    setTheme(selectedTheme);
 }
 
 // once the script has loaded, load the user's theme
