@@ -15,7 +15,7 @@ function interpret_date(date) {
 
     let h = String(date.getHours() % 12);
     let m = String(date.getMinutes()).padStart(2, '0');
-    let x = date.getHours() > 12 ? 'pm' : 'am';
+    let x = date.getHours() >= 12 ? 'pm' : 'am';
 
     let D = date.getDate();
     let M = months[date.getMonth()];
