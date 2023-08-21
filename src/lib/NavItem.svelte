@@ -8,9 +8,14 @@
   $: target = sameSite ? undefined : "_blank";
 </script>
 
-<a
-  class:text-emerald-600={current}
-  class="text-xs font-medium uppercase"
-  {href}
-  {target}><slot /></a
->
+<li>
+  <a
+    class="text-xs font-medium uppercase"
+    class:text-zinc-600={!current}
+    class:text-emerald-600={current}
+    {href}
+    {target}
+  >
+    <slot />
+  </a>
+</li>
