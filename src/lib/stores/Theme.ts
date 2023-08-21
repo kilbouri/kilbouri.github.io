@@ -1,16 +1,51 @@
 import { persisted } from "svelte-local-storage-store";
+import { derived, readable } from "svelte/store";
 
-type Theme = "light" | "dark" | "system";
+type Theme = "light" | "dark";
 
-const store = persisted<Theme>("theme", "system");
+const colorSchemeQuery = "(prefers-color-scheme: dark)";
+const currentSystemPreference = window.matchMedia(colorSchemeQuery).matches
+  ? "dark"
+  : "light";
 
-const isDarkPreferred = (theme: Theme) => {
-  if (theme === "system") {
-    // determine if system theme prefers dark or not
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
+// this store tracks the user's theme preference
+const userPrefStore = persisted<Theme | "system">("theme", "system");
 
-  return theme === "dark";
+// this store tracks the current system theme
+const sysPrefStore = readable<Theme>(currentSystemPreference, (set) => {
+  const systemChangeHandler = (e: MediaQueryListEventMap["change"]) => {
+    set(e.matches ? "dark" : "light");
+  };
+
+  const mediaQuery = window.matchMedia(colorSchemeQuery);
+  mediaQuery.addEventListener("change", systemChangeHandler);
+
+  return () => {
+    mediaQuery.removeEventListener("change", systemChangeHandler);
+  };
+});
+
+// Creates a derived store whose value is:
+// - user preference if user preference !== "system"
+// - system preference if user preference === "system"
+const createThemeStore = () => {
+  const { subscribe } = derived(
+    [userPrefStore, sysPrefStore],
+    ([$user, $system]) => {
+      if ($user === "system") {
+        return $system;
+      }
+
+      return $user;
+    }
+  );
+
+  return {
+    subscribe,
+    setTheme: (newTheme: Theme) => userPrefStore.set(newTheme),
+    clear: () => userPrefStore.set("system"),
+  };
 };
 
-export { store as theme, isDarkPreferred, type Theme };
+const themeStore = createThemeStore();
+export { themeStore as theme, type Theme };

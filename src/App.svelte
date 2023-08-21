@@ -3,13 +3,25 @@
 </script>
 
 <script>
+  import FixedNav from "./lib/FixedNav.svelte";
+  import NavItem from "./lib/NavItem.svelte";
   import ThemeProvider from "./lib/ThemeProvider.svelte";
 </script>
 
 <ThemeProvider>
-  <div id="page-bg-container" class="min-h-screen bg-gray-200">
-    <main class="max-w-3xl mx-auto text-black">
-      <div class="flex flex-col justify-center h-screen align-center">
+  <div
+    id="page-bg-container"
+    class="min-h-screen bg-gray-200 dark:bg-slate-700"
+  >
+    <div id="page-width-limit" class="relative max-w-3xl px-2 mx-auto">
+      <FixedNav>
+        <NavItem current href="#">Home</NavItem>
+        <NavItem href="https://github.com/kilbouri">GitHub</NavItem>
+        <NavItem href="https://linkedin.com/in/kilbouri">LinkedIn</NavItem>
+        <NavItem slot="end" href="./blog">Blog</NavItem>
+      </FixedNav>
+
+      <main class="flex flex-col justify-center h-screen align-center">
         <div class="flex items-center gap-4 mb-6 text-zinc-500">
           <span class="inline-block w-6 border-b-2 border-current" />
           <span class="text-sm font-bold">HELLO</span>
@@ -24,7 +36,7 @@
           Ontario, Canada. I specialize in creating unplanned bonus features, though
           on occasion I succeed in finding the right answer in finite time.
         </p>
-      </div>
-    </main>
+      </main>
+    </div>
   </div>
 </ThemeProvider>

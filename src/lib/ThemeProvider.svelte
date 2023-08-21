@@ -1,11 +1,9 @@
-<script lang="ts" context="module">
-  import { isDarkPreferred, theme } from "./stores/Theme";
-
-  export const toggleTheme = () => {
-    theme.update((prev) => (isDarkPreferred(prev) ? "light" : "dark"));
-  };
+<script lang="ts">
+  import { theme } from "./stores/Theme";
+  $: dark = $theme === "dark";
 </script>
 
-<div class:dark={isDarkPreferred($theme)}>
+<!-- The dark class will tell Tailwind to use dark:-prefixed classes -->
+<div class:dark>
   <slot />
 </div>
