@@ -2,9 +2,7 @@
   import { onMount } from "svelte";
   import { activeId } from "../../lib/stores/ActiveId";
 
-  let container: HTMLDivElement;
   let observer: IntersectionObserver;
-
   let sectionIds: string[] = [];
   let visible: string[] = [];
 
@@ -49,6 +47,4 @@
   });
 </script>
 
-<div bind:this={container}>
-  <slot />
-</div>
+<slot />
