@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { theme } from "../lib/stores/Theme";
+  import { theme } from "../lib/store";
 
   onMount(() => {
     const html = document.querySelector("html");

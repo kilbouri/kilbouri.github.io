@@ -9,7 +9,7 @@
   import ThemeProvider from "./components/ThemeProvider.svelte";
   import ScrollableSection from "./components/ScrollableSection.svelte";
   import ScrollSpy from "./components/ScrollSpy.svelte";
-  import { activeId } from "./lib/stores/ActiveId";
+  import { activeId } from "./lib/store";
 
   const samePageLinks: [string, string][] = [
     ["", "Home"],
