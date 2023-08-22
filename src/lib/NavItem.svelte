@@ -13,8 +13,8 @@
     class="p-2 text-sm font-medium uppercase
            text-zinc-600 hover:text-zinc-900
            dark:text-zinc-300 dark:hover:text-zinc-100
-           data-[current='true']:!text-emerald-600
-           data-[current='true']:hover:!text-emerald-800 data-[current='true']:hover:dark:!text-emerald-400"
+           data-[current='true']:!text-accent-600
+           data-[current='true']:hover:!text-accent-800 data-[current='true']:hover:dark:!text-accent-400"
     data-current={current}
     {href}
     {target}

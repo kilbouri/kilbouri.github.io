@@ -16,7 +16,7 @@
 <ThemeProvider />
 
 <StickyNav>
-  <div class="w-full grid grid-cols-[auto,1fr,auto] max-w-3xl px-2 mx-auto">
+  <div class="w-full grid grid-cols-[auto,1fr,auto] max-w-6xl px-2 mx-auto">
     <ul class="flex flex-row justify-start gap-10">
       <!-- Start slot -->
       <img src="https://placehold.co/48" alt="Placeholder" />
@@ -59,7 +59,7 @@
       </div>
 
       <h1 class="mb-4 text-5xl font-extrabold text-zinc-600 dark:text-zinc-300">
-        I'm <span class="text-emerald-600">Isaac</span> Kilbourne
+        I'm <span class="text-accent-600">Isaac</span> Kilbourne
       </h1>
 
       <p class="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">

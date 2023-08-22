@@ -11,5 +11,8 @@
     "**/node_modules": true,
     "**/*.d.ts": true,
     "**/tsconfig.json": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
   }
 }

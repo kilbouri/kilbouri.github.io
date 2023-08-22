@@ -6,7 +6,6 @@
 
   // navElement is undefined until after mount completes
   onMount(() => {
-    console.log(navElement);
     const observer = new IntersectionObserver(
       ([e]) => (pinned = e.intersectionRatio < 1),
       { threshold: [1] }
@@ -17,8 +16,9 @@
 </script>
 
 <nav
-  class="sticky -top-[1px] bg-zinc-200 dark:bg-zinc-900 z-50"
+  class="sticky -top-[1px] bg-zinc-200 z-30 dark:bg-zinc-900"
   class:shadow-md={pinned}
+  class:dark:shadow-lg={pinned}
   bind:this={navElement}
 >
   <slot />
