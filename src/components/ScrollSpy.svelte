@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { activeId } from "../../lib/stores/ActiveId";
+  import { activeId } from "../lib/stores/ActiveId";
 
   let observer: IntersectionObserver;
   let sectionIds: string[] = [];

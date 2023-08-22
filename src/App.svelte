@@ -7,8 +7,8 @@
   import NavItem from "./components/NavItem.svelte";
   import SectionHeader from "./components/SectionHeader.svelte";
   import ThemeProvider from "./components/ThemeProvider.svelte";
-  import ScrollableSection from "./components/ScrollSpy/ScrollableSection.svelte";
-  import ScrollSpy from "./components/ScrollSpy/ScrollSpy.svelte";
+  import ScrollableSection from "./components/ScrollableSection.svelte";
+  import ScrollSpy from "./components/ScrollSpy.svelte";
   import { activeId } from "./lib/stores/ActiveId";
 
   const samePageLinks: [string, string][] = [
