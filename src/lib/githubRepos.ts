@@ -16,15 +16,19 @@ const getGithubRepositories = async (
   keepForks: boolean = false,
   sort: "created" | "updated" | "pushed" | "full_name" = "full_name"
 ): Promise<RepositorySummary[]> => {
-  return DUMMY_API_RESPONSE;
+  // return DUMMY_API_RESPONSE;
 
   const url = `users/${accountName}/repos?sort=${sort}`;
-  const result = await githubApi.get(url);
+  const result = await githubApi.get<RepositorySummary[]>(url);
 
   const { status, statusText, data } = result;
 
   if (status !== HttpStatusCode.Ok) {
     throw `Unable to reach the Github API (${status}: ${statusText})`;
+  }
+
+  if (!keepForks) {
+    return data.filter((repo) => !repo.fork);
   }
 
   return data;
