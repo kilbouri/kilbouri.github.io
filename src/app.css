@@ -9,5 +9,5 @@ html {
 }
 
 body {
-  @apply min-h-screen bg-zinc-200 dark:bg-zinc-900;
+  @apply bg-zinc-200 dark:bg-zinc-900;
 }

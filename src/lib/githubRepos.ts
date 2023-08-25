@@ -16,7 +16,7 @@ const getGithubRepositories = async (
   keepForks: boolean = false,
   sort: "created" | "updated" | "pushed" | "full_name" = "full_name"
 ): Promise<RepositorySummary[]> => {
-  // return DUMMY_API_RESPONSE;
+  return DUMMY_API_RESPONSE;
 
   const url = `users/${accountName}/repos?sort=${sort}`;
   const result = await githubApi.get<RepositorySummary[]>(url);

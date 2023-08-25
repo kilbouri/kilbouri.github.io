@@ -8,6 +8,16 @@
 
   <body>
     <div id="app"></div>
+
+    <!-- Open Iconic SVG Sprite injection -->
+    <img src="/open-iconic/sprite/open-iconic.svg" style="display: none;" class="ic-sprite" alt="" />
+    <script src="/svginjector/svg-injector.min.js"></script>
+    <script>
+      var mySVGsToInject = document.querySelectorAll('.ic-sprite');
+      SVGInjector(mySVGsToInject);
+    </script>
+
+    <!-- This should be last always -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 

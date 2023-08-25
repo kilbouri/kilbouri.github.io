@@ -15,6 +15,8 @@
   import { activeId } from "./lib/store";
   import { allTools } from "./lib/tools";
   import { getGithubRepositories } from "./lib/githubRepos";
+  import OpenIconicIcon from "./components/OpenIconicIcon.svelte";
+  import Accordion from "./components/Accordion.svelte";
 
   const fetchProjects = getGithubRepositories("kilbouri");
 </script>
@@ -79,37 +81,54 @@
       </div>
     </ScrollSection>
 
-    <ScrollSection id="skills">
-      <SectionHeader>Stuff I Use</SectionHeader>
+    <div class="min-h-screen">
+      <div class="grid divide-y divide-neutral-500">
+        <Accordion>
+          <svelte:fragment slot="label">
+            What is a SAAS platform?
+          </svelte:fragment>
 
-      <!-- TODO: redesign this to look more like this: 
-           https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F5542520%2Fscreenshots%2F14329285%2Fmedia%2Fc69320779b1398227f26bc6cc3971471.png%3Fcompress%3D1%26resize%3D400x300%26vertical%3Dtop&f=1&nofb=1&ipt=bd7eedc497f5ec2788e22df33d61228d5de2b7422a40b75d4f0e5f28578ace72&ipo=images
-      -->
-      <div
-        class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-      >
-        {#each allTools.sort( (a, b) => a.name.localeCompare(b.name) ) as { name, iconName, variant }}
-          <ToolCard toolName={name} {iconName} {variant} />
-        {/each}
+          A SAAS platform offers Software as a Service. This makes software
+          development easier (so they claim!). Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Quidem, cumque. A aliquam excepturi
+          optio deserunt commodi corporis quibusdam natus aut numquam quo odit
+          quidem, veniam, incidunt distinctio aspernatur cumque dolorum?
+        </Accordion>
+        <Accordion>
+          <svelte:fragment slot="label">
+            What is a SAAS platform?
+          </svelte:fragment>
+
+          A SAAS platform offers Software as a Service. This makes software
+          development easier (so they claim!). Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Quidem, cumque. A aliquam excepturi
+          optio deserunt commodi corporis quibusdam natus aut numquam quo odit
+          quidem, veniam, incidunt distinctio aspernatur cumque dolorum?
+        </Accordion>
+        <Accordion>
+          <svelte:fragment slot="label">
+            What is a SAAS platform?
+          </svelte:fragment>
+
+          A SAAS platform offers Software as a Service. This makes software
+          development easier (so they claim!). Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Quidem, cumque. A aliquam excepturi
+          optio deserunt commodi corporis quibusdam natus aut numquam quo odit
+          quidem, veniam, incidunt distinctio aspernatur cumque dolorum?
+        </Accordion>
+        <Accordion>
+          <svelte:fragment slot="label">
+            What is a SAAS platform?
+          </svelte:fragment>
+
+          A SAAS platform offers Software as a Service. This makes software
+          development easier (so they claim!). Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Quidem, cumque. A aliquam excepturi
+          optio deserunt commodi corporis quibusdam natus aut numquam quo odit
+          quidem, veniam, incidunt distinctio aspernatur cumque dolorum?
+        </Accordion>
       </div>
-    </ScrollSection>
-
-    <ScrollSection id="projects">
-      <SectionHeader>Projects</SectionHeader>
-
-      {#await fetchProjects}
-        <div
-          class="w-16 h-16 border-4 rounded-full border-x-zinc-500 animate-spin"
-        />
-        <!-- Spinner -->
-      {:then projects}
-        {#each projects as project}
-          <Project {...project} />
-        {/each}
-      {:catch error}
-        <span class="font-medium text-red-400">{error}</span>
-      {/await}
-    </ScrollSection>
+    </div>
   </main>
 </div>
 
