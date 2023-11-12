@@ -98,23 +98,10 @@
       </div>
     </nav>
 
-    <!-- Opening logo splash (removed after animation completion)-->
-    <div
-      id="splash-logo"
-      class="fixed-top animate__animated animate__fadeOut delayed-250"
-      style="width: 25vw; height: 25vh; margin-left: 37.5vw; margin-top: 37.5vh; display: none;"
-    >
-      <svg class="fg" style="width: 100%; height: 100%" viewBox="0 0 4096 4096">
-        <path
-          d="M636.68,476.324L632.911,3619.68C240.696,3206.08 0,2681.06 0,2066.75C0,1450.39 242.294,890.182 636.68,476.324ZM1677.03,3619.68L1677.03,476.324L1307.28,476.324L1307.28,3619.68L1677.03,3619.68ZM2340.18,2113.32L2340.18,3619.68L3489.33,3619.68L2340.18,2113.32ZM3809.87,953.909C3992.21,1284.01 4096,1663.35 4096,2066.75C4096,2424.57 4014.34,2763.47 3868.61,3065.9L2988.42,1945.67L3809.87,953.909ZM3458.51,476.324L2340.18,476.324L2340.18,1893.51L3458.51,476.324Z"
-        />
-      </svg>
-    </div>
-
     <!-- Header section -->
     <div
       id="header"
-      class="mb-6 section wow animate__fadeIn delayed-250"
+      class="mb-6 min-vh-100 section wow animate__fadeIn delayed-250"
       style="padding-top: 25vh"
     >
       <div class="mx-auto text-center jumbotron">
@@ -124,17 +111,17 @@
         <p class="mb-0 fg section-label">Isaac Kilbourne</p>
         <hr class="section-rule" />
         <p class="fg-alternate" style="font-size: larger">
-          I am a second year computer science student at the University of
-          Windsor who is passionate about programming! I love making things that
-          other people find cool or useful!
+          I specialize in creating unplanned bonus features, though on rare occasion I succeed
+          in finding the right answer in a finite amount of time. By day I am a computer science student 
+          at the University of Windsor, and by night I sleep.
         </p>
       </div>
+    </div>
 
-    <!-- Projects (GitHub & Repl.it) List section -->
     <div id="projects" class="fg section wow animate__fadeIn delayed-250">
       <div id="github-projects">
         <div
-          class="section-label .mx-5 d-flex justify-content-center align-items-center"
+          class="mx-5 section-label d-flex justify-content-center align-items-center"
         >
           <img
             class="logo"
@@ -144,106 +131,47 @@
           <p class="mb-0 align-self-center ps-4">GitHub Projects</p>
         </div>
 
-        <!-- Loading spinner for slow connections (removed when github promise is fullfilled)-->
+        <!-- Loading spinner for slow connections -->
         <div id="github-loading-spinner" class="d-flex justify-content-center">
           <div class="spinner-border"></div>
         </div>
 
-        <div class="container p-4">
-          <div id="repo_table" class="row g-2 row-cols-1 row-cols-lg-3"></div>
-        </div>
-      </div>
-
-      <div id="repls">
-        <div
-          class="section-label d-flex justify-content-center align-items-center"
-        >
-          <img
-            class="logo"
-            src="assets/Logos/replit.svg"
-            style="height: 48px"
-          />
-          <p class="mb-0 align-self-center ps-4">repl.it Projects</p>
+        <div id="github-error-message" class="text-center text-danger fw-bold d-none">
+          An error occured while fetching my Github repositories. Please try again later.
         </div>
 
-        <!-- Loading spinner for slow connections (removed when repl promise is fullfilled)-->
-        <div id="repl-loading-spinner" class="d-flex justify-content-center">
-          <div class="spinner-border"></div>
-        </div>
-
-        <div class="container p-4">
-          <div id="repl_table" class="row g-2 row-cols-1 row-cols-lg-3"></div>
-        </div>
+        <div data-containerName="githubRepositories" class="container p-4 mx-auto row g-2 row-cols-1 row-cols-lg-3"></div>
       </div>
     </div>
 
     <!-- Card Template -->
-    <template id="repo_template">
+    <template data-templateName="githubRepository">
       <div class="wow animate__fadeIn col delayed-250">
         <div class="p-3 shadow-sm card h-100">
           <div class="p-0 card-body" style="max-width: 690px">
-            <a id="repo-link" href="" target="blank">
-              <h5 id="repo-name" class="fg">{{REPO NAME}}</h5>
+            <a data-fieldName="repoLink" href="https://example.com" target="blank">
+              <h5 class="w-100">
+                <span data-fieldName="repoName" class="fg">{{REPO_NAME}}</span>
+                <span data-fieldName="repoIsFork" class="fg-alternate fw-normal">{{IS_FORK}}</span>
+              </h5>
             </a>
-            <p id="repo-desc" class="fg-alternate">{{REPO DESCRIPTION}}</p>
+            <p data-fieldName="repoDescription" class="fg-alternate">{{REPO_DESCRIPTION}}</p>
           </div>
-          <div style="display: inline-flex">
-            <p
-              class="m-0 fg-alternate"
-              style="display: inline-block; width: calc(100% - 18px)"
-            >
-              <small id="repo-push">{{LAST PUSH}}</small>
-            </p>
-            <img
-              id="repo-lang"
-              src=""
-              title=""
-              style="width: 18px; align-self: flex-end"
-            />
-          </div>
-        </div>
       </div>
     </template>
 
-    <!-- Language Proficiency Bar Template -->
-    <template id="language_template">
-      <div class="wow animate__fadeIn col delayed-250">
-        <div class="d-flex my-lg-2" style="align-items: center">
-          <img id="icon" style="width: 28px; height: 28px" />
-          <div class="container d-inline-block">
-            <div class="progress h-100" style="max-height: 18px">
-              <div id="progBar" class="progress-bar" role="progressbar">
-                <!-- labels -->
-                <div class="container d-flex">
-                  <div id="progBarLanguage"></div>
-                  <div id="progBarProficiency" style="margin-left: auto"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </template>
+    <!-- Dependency scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="text/javascript">
+        new WOW({ animateClass: "animate__animated" }).init();
+    </script>
 
     <!-- Additional functions -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="scripts/theme.js" type="text/javascript"></script>
-    <script src="scripts/icon-helper.js" type="text/javascript"></script>
-    <script src="scripts/external-data.js" type="text/javascript"></script>
-    <script src="scripts/projects.js" type="text/javascript"></script>
-    <script
-      src="scripts/language-proficiency.js"
-      type="text/javascript"
-    ></script>
-    <script type="text/javascript">
-      new WOW({ animateClass: "animate__animated" }).init();
+    <!-- <script src="scripts/modules/templating.mjs" type="module"></script> -->
+    <!-- <script src="scripts/modules/github.mjs" type="module"></script> -->
+    <script src="scripts/modules/main.mjs" type="module"></script>
 
-      // removes the animated splash to prevent broken highlighting behaviour
-      document
-        .getElementById("splash-logo")
-        .addEventListener("animationend", function () {
-          this.remove();
-        });
-    </script>
+    <!-- TODO: review these -->
+    <script src="scripts/theme.js" type="text/javascript"></script>
   </body>
 </html>
