@@ -1,27 +1,28 @@
 /**
  * This stylesheet provides theming variables to the main style sheet
  */
- :root {
-	--ik-foreground1: #ffffff;
-	--ik-foreground2: #e2e2e2;
-	--ik-muted-foreground: #747474;
+:root {
+  --ik-foreground1: #ffffff;
+  --ik-foreground2: #e2e2e2;
+  --ik-muted-foreground: #747474;
 
-	--ik-background1: #141414;
-	--ik-background2: #0f0f0f;
+  --ik-background1: #161819;
+  --ik-background2: #1d1e1b;
 
-	--ik-nav-button-border: #ffffff33;
-	--ik-nav-button-center: #ffffff8c;
+  --ik-nav-button-border: #ffffff33;
+  --ik-nav-button-center: #ffffff8c;
 
-	--ik-highlight: rgb(51, 197, 25);
-	--ik-highlight-translucent: #3ee42159;
+  --ik-highlight: rgb(51, 197, 25);
+  --ik-highlight-translucent: #3ee42159;
 
-	--ik-languageProgressBarFg: #52812c;
-	--ik-languageProgressBarBg: var(--ik-background2);
+  --ik-languageProgressBarFg: #52812c;
+  --ik-languageProgressBarBg: var(--ik-background2);
 
-	--ik-monospace-font: 'Source Code Pro', 'Courier New', monospace;
+  --ik-monospace-font: "Source Code Pro", "Courier New", monospace;
 }
 
-.navbar-toggler, .logo {
-	filter: saturate(0%);
-	filter: brightness(200%);
+.navbar-toggler,
+.logo {
+  filter: saturate(0%);
+  filter: brightness(200%);
 }
