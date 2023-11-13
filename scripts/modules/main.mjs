@@ -6,6 +6,24 @@ import {
 } from "./templating.mjs";
 
 /**
+ * @param {boolean} visible
+ */
+const setGithubLoadSpinnerState = (visible) => {
+  document
+    .querySelector("#github-loading-spinner")
+    ?.classList.toggle("d-none", visible);
+};
+
+/**
+ * @param {boolean} visible
+ */
+const setGithubLoadErrorState = (visible) => {
+  document
+    .querySelector("#github-error-message")
+    ?.classList.toggle("d-none", visible);
+};
+
+/**
  * Fetches the public repositories of the given username and loads them into
  * the GitHub repository list.
  *
@@ -19,20 +37,19 @@ const populateGithubReposForUser = async (username) => {
   const repoTemplate = findTemplate(GH_REPO_TEMPLATE_NAME);
   const repoContainer = findContainer(GH_REPO_CONTAINER_NAME);
 
-  /** @type {?HTMLDivElement} */
-  const loadingSpinner = document.querySelector("#github-loading-spinner");
-  /** @type {?HTMLDivElement} */
-  const loadingErrorMsg = document.querySelector("#github-error-message");
-
   if (!repoTemplate || !repoContainer) {
     // didn't locate the container and/or template, so no point bugging the API
+    console.warn("Failed to locate GitHub repo template or container");
+    setGithubLoadErrorState(true);
+    setGithubLoadSpinnerState(false);
     return;
   }
 
   const publicRepos = await fetchPublicRepos(username);
   if (!publicRepos) {
-    loadingSpinner?.classList.add("d-none");
-    loadingErrorMsg?.classList.remove("d-none");
+    console.warn("Failed to contact GitHub API");
+    setGithubLoadErrorState(true);
+    setGithubLoadSpinnerState(false);
     return;
   }
 
@@ -56,7 +73,7 @@ const populateGithubReposForUser = async (username) => {
   }
 
   // kill the loading spinner
-  loadingErrorMsg?.classList.remove("d-none");
+  setGithubLoadSpinnerState(false);
 };
 
 // IIFE to fake top-level await
