@@ -11,7 +11,7 @@ import {
 const setGithubLoadSpinnerState = (visible) => {
   document
     .querySelector("#github-loading-spinner")
-    ?.classList.toggle("d-none", visible);
+    ?.classList.toggle("d-none", !visible);
 };
 
 /**
@@ -20,7 +20,7 @@ const setGithubLoadSpinnerState = (visible) => {
 const setGithubLoadErrorState = (visible) => {
   document
     .querySelector("#github-error-message")
-    ?.classList.toggle("d-none", visible);
+    ?.classList.toggle("d-none", !visible);
 };
 
 /**
